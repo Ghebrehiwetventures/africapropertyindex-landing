@@ -342,7 +342,7 @@ function App() {
           NAV (with mobile hamburger)
           ══════════════════════════════════════════════════ */}
       <nav className="border-b border-border sticky top-0 z-50 bg-background/95 backdrop-blur-sm">
-        <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
           <div className="flex items-center gap-2.5">
             <DatabaseIcon className="w-5 h-5" />
             <span className="font-bold text-lg uppercase tracking-tight">
@@ -381,7 +381,7 @@ function App() {
 
         {/* Mobile menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden border-t border-border bg-background px-6 py-4 space-y-3">
+          <div className="md:hidden border-t border-border bg-background px-4 sm:px-6 py-4 space-y-3">
             {navLinks.map((link) => (
               <a
                 key={link.label}
@@ -407,7 +407,7 @@ function App() {
           HERO (new subhead + inline CTA)
           ══════════════════════════════════════════════════ */}
       <section ref={heroRef} className="bg-foreground text-background relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 pt-16 pb-20 sm:pt-24 sm:pb-28">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-12 pb-16 sm:pt-24 sm:pb-28">
           {/* Live badge */}
           <div className="animate-fade-in flex items-center gap-2 mb-8">
             <span className="relative flex h-2.5 w-2.5">
@@ -468,7 +468,7 @@ function App() {
       {/* ══════════════════════════════════════════════════
           THE PROBLEM — fragmentation table (best hook, right after hero)
           ══════════════════════════════════════════════════ */}
-      <section id="problem" className="max-w-7xl mx-auto px-6 py-20">
+      <section id="problem" className="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-20">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <RevealSection>
             <span className="label-style mb-4 block">// the_problem</span>
@@ -501,10 +501,10 @@ function App() {
                   { market: "Ghana", sites: "15+", formats: "6", standardized: false },
                   { market: "Ethiopia", sites: "10+", formats: "5", standardized: false },
                 ].map((row) => (
-                  <div key={row.market} className="grid grid-cols-[140px_1fr_1fr_auto] items-center py-3 border-b border-border last:border-0">
+                  <div key={row.market} className="grid grid-cols-[100px_1fr_auto] sm:grid-cols-[140px_1fr_1fr_auto] items-center py-3 border-b border-border last:border-0">
                     <span className="font-bold">{row.market}</span>
                     <span className="text-muted-foreground text-center">{row.sites} sites</span>
-                    <span className="text-muted-foreground text-center">{row.formats} formats</span>
+                    <span className="text-muted-foreground text-center hidden sm:block">{row.formats} formats</span>
                     <span className="text-red-500 text-xs font-bold uppercase tracking-widest">NO_STANDARD</span>
                   </div>
                 ))}
@@ -521,8 +521,8 @@ function App() {
       {/* ══════════════════════════════════════════════════
           PROOF — Cape Verde stats
           ══════════════════════════════════════════════════ */}
-      <section className="bg-muted py-20">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="bg-muted py-12 sm:py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <RevealSection>
             <div className="flex items-center justify-center gap-3 mb-4">
               <span className="w-2 h-2 bg-green" />
@@ -545,7 +545,7 @@ function App() {
             { end: 100, suffix: "%", label: "Automation Rate" },
             ].map((stat, i) => (
               <RevealSection key={stat.label} delay={i * 100}>
-                <div className="bg-background p-8">
+                <div className="bg-background p-4 sm:p-8">
                   <AnimatedStat
                     end={stat.end}
                     suffix={stat.suffix}
@@ -561,8 +561,8 @@ function App() {
       {/* ══════════════════════════════════════════════════
           HOW IT WORKS — simplified 3 steps
           ══════════════════════════════════════════════════ */}
-      <section id="how-it-works" className="bg-foreground text-background py-20">
-        <div className="max-w-7xl mx-auto px-6">
+      <section id="how-it-works" className="bg-foreground text-background py-12 sm:py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <RevealSection>
             <span className="label-style text-background/50 mb-4 block">// system.pipeline</span>
             <h2 className="font-sans font-black text-3xl sm:text-4xl uppercase tracking-tight mb-4">
@@ -596,7 +596,7 @@ function App() {
               },
             ].map((item, i) => (
               <RevealSection key={item.step} delay={i * 150}>
-                <div className="bg-foreground p-8 h-full relative">
+                <div className="bg-foreground p-5 sm:p-8 h-full relative">
                   <div className="text-7xl font-sans font-black text-background/10 absolute top-4 right-4">
                     {item.step}
                   </div>
@@ -624,8 +624,8 @@ function App() {
       {/* ══════════════════════════════════════════════════
           RECENT AGGREGATIONS — auto-scrolling carousel
           ══════════════════════════════════════════════════ */}
-      <section id="listings" className="py-20">
-        <div className="max-w-7xl mx-auto px-6">
+      <section id="listings" className="py-12 sm:py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <RevealSection>
             <div className="flex items-center justify-between mb-2">
               <div className="flex items-center gap-3">
@@ -638,9 +638,9 @@ function App() {
                 Get_Full_Access <ArrowRightIcon className="w-3 h-3" />
               </a>
             </div>
-            <div className="flex items-center gap-4 mb-8 ml-4">
+            <div className="flex items-center gap-4 mb-8 ml-0 sm:ml-4">
               <p className="label-style">Live data samples from our unified index</p>
-              <span className="label-style px-2 py-0.5 border border-border bg-muted">via GET /api/v1/properties</span>
+              <span className="label-style px-2 py-0.5 border border-border bg-muted hidden sm:inline-flex">via GET /api/v1/properties</span>
             </div>
           </RevealSection>
         </div>
@@ -709,8 +709,8 @@ function App() {
       {/* ══════════════════════════════════════════════════
           WHO BENEFITS
           ══════════════════════════════════════════════════ */}
-      <section className="bg-muted py-20">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="bg-muted py-12 sm:py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <RevealSection>
             <span className="label-style mb-4 block">// target_users</span>
             <h2 className="font-sans font-black text-3xl sm:text-4xl uppercase tracking-tight mb-16">
@@ -761,7 +761,7 @@ function App() {
           JOIN API BETA — full-width dark CTA (mirrors hero)
           ══════════════════════════════════════════════════ */}
       <section id="waitlist" className="bg-foreground text-background">
-        <div className="max-w-7xl mx-auto px-6 py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-20">
           <RevealSection>
             <div className="flex items-center gap-2 mb-6">
               <KeyIcon className="w-5 h-5" />
@@ -818,7 +818,7 @@ function App() {
       <footer className="border-t border-border">
         {/* Trust strip */}
         <div className="border-b border-border bg-muted">
-          <div className="max-w-7xl mx-auto px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-6 text-xs text-muted-foreground uppercase tracking-widest">
               <span className="flex items-center gap-2">
                 <GlobeIcon className="w-4 h-4" /> Neutral · No listings sold
@@ -826,7 +826,7 @@ function App() {
               <span className="hidden sm:inline">|</span>
               <span>Data from 120+ sources across 54 markets</span>
             </div>
-            <div className="flex items-center gap-3">
+            <div className="flex flex-wrap items-center gap-2 sm:gap-3">
               {["ZA", "KE", "NG", "GH", "CV", "MA", "ET", "TZ"].map((code) => (
                 <span key={code} className="text-[10px] font-bold border border-border px-1.5 py-0.5 bg-background">
                   {code}
@@ -836,7 +836,7 @@ function App() {
           </div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-6 py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12">
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
             {/* Brand */}
             <div>
