@@ -837,7 +837,43 @@ function App() {
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-10">
+          {/* Mobile: compact stacked footer */}
+          <div className="sm:hidden space-y-6">
+            <div className="flex items-center gap-2">
+              <DatabaseIcon className="w-4 h-4" />
+              <span className="font-bold text-xs uppercase tracking-tight">
+                Africa Property Index
+              </span>
+            </div>
+            <p className="text-xs text-muted-foreground leading-relaxed">
+              The neutral data layer for African real estate. Infrastructure, not a portal.
+            </p>
+            <div className="flex gap-6">
+              <div>
+                <span className="label-style block mb-2">Connect</span>
+                {["Network_X", "LinkedIn_Prof"].map((link) => (
+                  <a key={link} href="#" className="block text-xs text-muted-foreground hover:text-foreground transition-colors uppercase tracking-widest mb-1">
+                    {link}
+                  </a>
+                ))}
+              </div>
+              <div>
+                <span className="label-style block mb-2">Legal</span>
+                {["Privacy_Policy", "Terms_of_Service"].map((link) => (
+                  <a key={link} href="#" className="block text-xs text-muted-foreground hover:text-foreground transition-colors uppercase tracking-widest mb-1">
+                    {link}
+                  </a>
+                ))}
+              </div>
+            </div>
+            <div className="border-t border-border pt-4 text-xs text-muted-foreground uppercase tracking-widest">
+              <p>&copy; {new Date().getFullYear()} Africa Property Index Tech</p>
+              <p className="mt-1">Location: Pan-African_Distributed</p>
+            </div>
+          </div>
+
+          {/* Desktop: 4-column grid */}
+          <div className="hidden sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
             {/* Brand */}
             <div>
               <div className="flex items-center gap-2 mb-3">
