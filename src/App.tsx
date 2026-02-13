@@ -99,8 +99,8 @@ function LiveTicker() {
   ];
 
   return (
-    <div className="overflow-hidden border-y border-border bg-muted">
-      <div className="flex animate-ticker whitespace-nowrap">
+    <div className="overflow-hidden border-y border-border bg-muted" role="marquee" aria-label="Live property data feed">
+      <div className="flex animate-ticker whitespace-nowrap" aria-hidden="true">
         {[...items, ...items].map((item, i) => (
           <span key={i} className="inline-flex items-center gap-3 px-6 py-2 text-xs text-muted-foreground">
             <span className="w-1.5 h-1.5 bg-green inline-block" />
@@ -272,6 +272,7 @@ function InlineEmailForm({
         type="email"
         required
         placeholder="ENTER_EMAIL_ADDRESS"
+        aria-label="Email address for API beta access"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         className={`flex-1 border px-3 sm:px-4 py-3 sm:py-3.5 text-xs sm:text-sm placeholder:uppercase placeholder:tracking-widest focus:outline-none focus:ring-2 focus:ring-offset-2 ${
@@ -283,6 +284,7 @@ function InlineEmailForm({
       <button
         type="submit"
         disabled={loading}
+        aria-label="Submit email for early access"
         className={`text-xs sm:text-sm uppercase tracking-widest px-6 sm:px-8 py-3 sm:py-3.5 border transition-colors disabled:opacity-50 flex items-center justify-center gap-2 ${
           isDark
             ? "bg-background text-foreground border-background hover:bg-transparent hover:text-background"
@@ -341,7 +343,8 @@ function App() {
       {/* ══════════════════════════════════════════════════
           NAV (with mobile hamburger)
           ══════════════════════════════════════════════════ */}
-      <nav className="border-b border-border sticky top-0 z-50 bg-background/95 backdrop-blur-sm">
+      <header>
+      <nav className="border-b border-border sticky top-0 z-50 bg-background/95 backdrop-blur-sm" aria-label="Main navigation">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
           <div className="flex items-center gap-2.5">
             <DatabaseIcon className="w-5 h-5" />
@@ -402,11 +405,13 @@ function App() {
           </div>
         )}
       </nav>
+      </header>
 
+      <main>
       {/* ══════════════════════════════════════════════════
           HERO (new subhead + inline CTA)
           ══════════════════════════════════════════════════ */}
-      <section ref={heroRef} className="bg-foreground text-background relative overflow-hidden">
+      <section ref={heroRef} className="bg-foreground text-background relative overflow-hidden" aria-label="Hero">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-12 pb-16 sm:pt-24 sm:pb-28">
           {/* Live badge */}
           <div className="animate-fade-in flex items-center gap-2 mb-8">
@@ -624,7 +629,7 @@ function App() {
       {/* ══════════════════════════════════════════════════
           RECENT AGGREGATIONS — auto-scrolling carousel
           ══════════════════════════════════════════════════ */}
-      <section id="listings" className="py-12 sm:py-20">
+      <section id="listings" className="py-12 sm:py-20" aria-label="Recent property aggregations">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <RevealSection>
             <div className="flex items-center justify-between mb-2">
@@ -655,7 +660,7 @@ function App() {
                   <div className="h-48 relative overflow-hidden bg-neutral-200">
                     <img
                       src={listing.image}
-                      alt={listing.location}
+                      alt={`${listing.type.toLowerCase()} property in ${listing.location}, ${listing.country} — $${listing.price.toLocaleString()}`}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute top-3 left-3">
@@ -760,7 +765,7 @@ function App() {
       {/* ══════════════════════════════════════════════════
           JOIN API BETA — full-width dark CTA (mirrors hero)
           ══════════════════════════════════════════════════ */}
-      <section id="waitlist" className="bg-foreground text-background">
+      <section id="waitlist" className="bg-foreground text-background" aria-label="Join API beta waitlist">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-20">
           <RevealSection>
             <div className="flex items-center gap-2 mb-6">
@@ -812,10 +817,12 @@ function App() {
         </div>
       </section>
 
+      </main>
+
       {/* ══════════════════════════════════════════════════
           FOOTER (with trust signals + one-line roadmap)
           ══════════════════════════════════════════════════ */}
-      <footer className="border-t border-border">
+      <footer className="border-t border-border" role="contentinfo">
         {/* Trust strip */}
         <div className="border-b border-border bg-muted">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
