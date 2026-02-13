@@ -1,0 +1,17 @@
+---
+description: Design system rules for Africa Property Index
+globs: ["**/*.tsx", "**/*.css", "**/*.ts"]
+---
+
+# Africa Property Index – Design Rules
+
+## ALWAYS follow these design constraints:
+- Font: JetBrains Mono for body/code, Inter/system sans for headings
+- Colors: Black and white only. Primary = black, background = white
+- Border-radius: 0 on ALL elements — no rounded corners ever
+- Shadow: 4px 4px 0px black (brutalist offset)
+- Typography: Uppercase with letter-spacing (tracking-[0.2em]) for labels
+- Style: Database-inspired, structured, technical — NOT marketing
+- Buttons: Black bg, white text, uppercase, mono, brutalist shadow, hover invert
+- Inputs: Black 1px border, no radius, mono font
+- No gradients, no blur, no soft shadows

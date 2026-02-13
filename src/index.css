@@ -1,0 +1,239 @@
+@import "tailwindcss";
+
+/* ── Custom theme ─────────────────────────────────── */
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "Cascadia Code", monospace;
+
+  --color-background: #ffffff;
+  --color-foreground: #000000;
+  --color-primary: #000000;
+  --color-primary-foreground: #ffffff;
+  --color-muted: #f5f5f5;
+  --color-muted-foreground: #717171;
+  --color-border: #e5e5e5;
+
+  --color-green: #22c55e;
+  --color-amber: #f59e0b;
+}
+
+/* ── Base ─────────────────────────────────────────── */
+* {
+  border-radius: 0 !important;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-mono);
+  background: var(--color-background);
+  color: var(--color-foreground);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: var(--color-foreground);
+  color: var(--color-background);
+}
+
+/* ── Utilities ────────────────────────────────────── */
+@utility brutalist-shadow {
+  box-shadow: 4px 4px 0px var(--color-foreground);
+}
+
+@utility brutalist-shadow-sm {
+  box-shadow: 2px 2px 0px var(--color-foreground);
+}
+
+@utility brutalist-shadow-white {
+  box-shadow: 4px 4px 0px var(--color-background);
+}
+
+@utility tracking-ultra {
+  letter-spacing: 0.1em;
+}
+
+@utility label-style {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-muted-foreground);
+  font-family: var(--font-mono);
+}
+
+/* ── Animations ───────────────────────────────────── */
+
+/* Fade up on scroll */
+@utility animate-fade-up {
+  animation: fadeUp 0.6s ease-out both;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Fade in */
+@utility animate-fade-in {
+  animation: fadeIn 0.8s ease-out both;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Slide in from left */
+@utility animate-slide-left {
+  animation: slideLeft 0.6s ease-out both;
+}
+
+@keyframes slideLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Slide in from right */
+@utility animate-slide-right {
+  animation: slideRight 0.6s ease-out both;
+}
+
+@keyframes slideRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Scale in */
+@utility animate-scale-in {
+  animation: scaleIn 0.5s ease-out both;
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Pulse dot */
+@utility animate-pulse-dot {
+  animation: pulseDot 2s ease-in-out infinite;
+}
+
+@keyframes pulseDot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+/* Ticker / marquee for live feed */
+@utility animate-ticker {
+  animation: ticker 30s linear infinite;
+}
+
+@keyframes ticker {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Listings carousel — slower card scroll */
+@utility animate-carousel {
+  animation: carousel 45s linear infinite;
+}
+
+@keyframes carousel {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Typing cursor blink */
+@utility animate-blink {
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Stagger children - applied via inline delay */
+@utility animate-stagger {
+  animation: fadeUp 0.5s ease-out both;
+}
+
+/* Glow ping for live indicator */
+@utility animate-ping-slow {
+  animation: pingSlow 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@keyframes pingSlow {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  75%, 100% {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+}
+
+/* Row highlight sweep */
+@utility animate-row-highlight {
+  animation: rowHighlight 8s ease-in-out infinite;
+}
+
+@keyframes rowHighlight {
+  0%, 100% { background-color: transparent; }
+  50% { background-color: var(--color-muted); }
+}
+
+/* Counter number roll */
+@utility tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Scroll-triggered visibility */
+.observe-hidden {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.observe-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger delay helpers */
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+.delay-600 { animation-delay: 600ms; }
+.delay-700 { animation-delay: 700ms; }
+.delay-800 { animation-delay: 800ms; }
