@@ -274,7 +274,7 @@ function InlineEmailForm({
         placeholder="ENTER_EMAIL_ADDRESS"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
-        className={`flex-1 border px-4 py-3.5 text-sm placeholder:uppercase placeholder:tracking-widest focus:outline-none focus:ring-2 focus:ring-offset-2 ${
+        className={`flex-1 border px-3 sm:px-4 py-3 sm:py-3.5 text-xs sm:text-sm placeholder:uppercase placeholder:tracking-widest focus:outline-none focus:ring-2 focus:ring-offset-2 ${
           isDark
             ? "border-background/30 bg-background/10 text-background placeholder:text-background/40 focus:ring-background"
             : "border-foreground bg-background text-foreground placeholder:text-muted-foreground focus:ring-foreground"
@@ -283,7 +283,7 @@ function InlineEmailForm({
       <button
         type="submit"
         disabled={loading}
-        className={`text-sm uppercase tracking-widest px-8 py-3.5 border transition-colors disabled:opacity-50 flex items-center justify-center gap-2 ${
+        className={`text-xs sm:text-sm uppercase tracking-widest px-6 sm:px-8 py-3 sm:py-3.5 border transition-colors disabled:opacity-50 flex items-center justify-center gap-2 ${
           isDark
             ? "bg-background text-foreground border-background hover:bg-transparent hover:text-background"
             : "bg-foreground text-background border-foreground hover:bg-background hover:text-foreground"
@@ -819,7 +819,7 @@ function App() {
         {/* Trust strip */}
         <div className="border-b border-border bg-muted">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div className="flex items-center gap-6 text-xs text-muted-foreground uppercase tracking-widest">
+            <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-6 text-xs text-muted-foreground uppercase tracking-widest text-center sm:text-left">
               <span className="flex items-center gap-2">
                 <GlobeIcon className="w-4 h-4" /> Neutral · No listings sold
               </span>
@@ -836,8 +836,8 @@ function App() {
           </div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-10">
             {/* Brand */}
             <div>
               <div className="flex items-center gap-2 mb-3">
@@ -877,7 +877,7 @@ function App() {
             </div>
 
             {/* Info */}
-            <div className="text-right sm:text-left lg:text-right">
+            <div className="text-left lg:text-right">
               <span className="label-style block mb-4">&copy; {new Date().getFullYear()} Africa Property Index Tech</span>
               <p className="text-xs text-muted-foreground uppercase tracking-widest">
                 Location: Pan-African_Distributed
