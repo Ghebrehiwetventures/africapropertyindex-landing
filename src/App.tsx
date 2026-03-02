@@ -349,7 +349,7 @@ function App() {
           <div className="flex items-center gap-2.5">
             <DatabaseIcon className="w-5 h-5" />
             <span className="font-bold text-lg uppercase tracking-tight">
-              Africa Property Index
+              Africa Real Estate Index
             </span>
           </div>
 
@@ -542,7 +542,7 @@ function App() {
             </p>
           </RevealSection>
 
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-border border border-border brutalist-shadow">
+          <div className="grid grid-cols-2 lg:grid-cols-4 border border-border max-sm:border-b-0 brutalist-shadow max-sm:shadow-none overflow-hidden">
             {[
             { end: 13, suffix: "", label: "Data Sources Integrated" },
             { end: 280, suffix: "+", label: "Clean Listings" },
@@ -550,7 +550,11 @@ function App() {
             { end: 100, suffix: "%", label: "Automation Rate" },
             ].map((stat, i) => (
               <RevealSection key={stat.label} delay={i * 100}>
-                <div className="bg-background p-4 sm:p-8">
+                <div
+                  className={`bg-background p-4 sm:p-8 border-border
+                    ${i < 2 ? "sm:border-b" : ""} ${i % 2 === 0 ? "border-r" : ""}
+                    lg:border-b-0 ${i < 3 ? "lg:border-r" : "lg:border-r-0"}`}
+                >
                   <AnimatedStat
                     end={stat.end}
                     suffix={stat.suffix}
@@ -776,7 +780,7 @@ function App() {
               Join the API Beta
             </h2>
             <p className="text-sm text-background/60 max-w-xl mb-10 leading-relaxed">
-              Get early access to the Africa Property Index API. Real-time data
+              Get early access to the Africa Real Estate Index API. Real-time data
               feeds, historical analytics, and market intelligence across the continent.
             </p>
 
@@ -849,7 +853,7 @@ function App() {
             <div className="flex items-center gap-2">
               <DatabaseIcon className="w-4 h-4" />
               <span className="font-bold text-xs uppercase tracking-tight">
-                Africa Property Index
+                Africa Real Estate Index
               </span>
             </div>
             <p className="text-xs text-muted-foreground leading-relaxed">
@@ -858,23 +862,25 @@ function App() {
             <div className="flex gap-6">
               <div>
                 <span className="label-style block mb-2">Connect</span>
-                {["Network_X", "LinkedIn_Prof"].map((link) => (
-                  <a key={link} href="#" className="block text-xs text-muted-foreground hover:text-foreground transition-colors uppercase tracking-widest mb-1">
-                    {link}
-                  </a>
-                ))}
+                <a href="https://www.linkedin.com/company/africa-real-estate-index/" target="_blank" rel="noopener noreferrer" className="block text-xs text-muted-foreground hover:text-foreground transition-colors uppercase tracking-widest mb-1">
+                  LinkedIn
+                </a>
+                <a href="https://x.com/AfricaREIndex" target="_blank" rel="noopener noreferrer" className="block text-xs text-muted-foreground hover:text-foreground transition-colors uppercase tracking-widest mb-1">
+                  X (Twitter)
+                </a>
               </div>
               <div>
                 <span className="label-style block mb-2">Legal</span>
-                {["Privacy_Policy", "Terms_of_Service"].map((link) => (
-                  <a key={link} href="#" className="block text-xs text-muted-foreground hover:text-foreground transition-colors uppercase tracking-widest mb-1">
-                    {link}
-                  </a>
-                ))}
+                <a href="/privacy.html" className="block text-xs text-muted-foreground hover:text-foreground transition-colors uppercase tracking-widest mb-1">
+                  Privacy Policy
+                </a>
+                <a href="/terms-of-service.html" className="block text-xs text-muted-foreground hover:text-foreground transition-colors uppercase tracking-widest mb-1">
+                  Terms of Service
+                </a>
               </div>
             </div>
             <div className="border-t border-border pt-4 text-xs text-muted-foreground uppercase tracking-widest">
-              <p>&copy; {new Date().getFullYear()} Africa Property Index Tech</p>
+              <p>&copy; {new Date().getFullYear()} Africa Real Estate Index Tech</p>
               <p className="mt-1">Location: Pan-African_Distributed</p>
             </div>
           </div>
@@ -886,7 +892,7 @@ function App() {
               <div className="flex items-center gap-2 mb-3">
                 <DatabaseIcon className="w-4 h-4" />
                 <span className="font-bold text-xs uppercase tracking-tight">
-                  Africa Property Index
+                  Africa Real Estate Index
                 </span>
               </div>
               <p className="text-xs text-muted-foreground leading-relaxed">
@@ -899,11 +905,12 @@ function App() {
             <div>
               <span className="label-style block mb-4">Connect</span>
               <div className="space-y-2">
-                {["Network_X", "LinkedIn_Prof"].map((link) => (
-                  <a key={link} href="#" className="block text-xs text-muted-foreground hover:text-foreground transition-colors uppercase tracking-widest">
-                    {link}
-                  </a>
-                ))}
+                <a href="https://www.linkedin.com/company/africa-real-estate-index/" target="_blank" rel="noopener noreferrer" className="block text-xs text-muted-foreground hover:text-foreground transition-colors uppercase tracking-widest">
+                  LinkedIn
+                </a>
+                <a href="https://x.com/AfricaREIndex" target="_blank" rel="noopener noreferrer" className="block text-xs text-muted-foreground hover:text-foreground transition-colors uppercase tracking-widest">
+                  X (Twitter)
+                </a>
               </div>
             </div>
 
@@ -911,17 +918,18 @@ function App() {
             <div>
               <span className="label-style block mb-4">Legal</span>
               <div className="space-y-2">
-                {["Privacy_Policy", "Terms_of_Service"].map((link) => (
-                  <a key={link} href="#" className="block text-xs text-muted-foreground hover:text-foreground transition-colors uppercase tracking-widest">
-                    {link}
-                  </a>
-                ))}
+                <a href="/privacy.html" className="block text-xs text-muted-foreground hover:text-foreground transition-colors uppercase tracking-widest">
+                  Privacy Policy
+                </a>
+                <a href="/terms-of-service.html" className="block text-xs text-muted-foreground hover:text-foreground transition-colors uppercase tracking-widest">
+                  Terms of Service
+                </a>
               </div>
             </div>
 
             {/* Info */}
             <div className="text-left lg:text-right">
-              <span className="label-style block mb-4">&copy; {new Date().getFullYear()} Africa Property Index Tech</span>
+              <span className="label-style block mb-4">&copy; {new Date().getFullYear()} Africa Real Estate Index Tech</span>
               <p className="text-xs text-muted-foreground uppercase tracking-widest">
                 Location: Pan-African_Distributed
               </p>

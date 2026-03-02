@@ -1,9 +1,9 @@
 ---
-description: Design system rules for Africa Property Index
+description: Design system rules for Africa Real Estate Index
 globs: ["**/*.tsx", "**/*.css", "**/*.ts"]
 ---
 
-# Africa Property Index – Design Rules
+# Africa Real Estate Index – Design Rules
 
 ## ALWAYS follow these design constraints:
 - Font: JetBrains Mono for body/code, Inter/system sans for headings

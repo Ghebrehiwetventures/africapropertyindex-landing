@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://africapropertyindex.com/sitemap.xml
+Sitemap: https://africarealestateindex.com/sitemap.xml

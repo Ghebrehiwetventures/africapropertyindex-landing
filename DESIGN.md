@@ -1,4 +1,4 @@
-# Africa Property Index – Design System
+# Africa Real Estate Index – Design System
 
 ## Philosophy
 Database-inspired, structured, technical. The site should feel like API documentation or a data terminal — not a typical marketing page.
