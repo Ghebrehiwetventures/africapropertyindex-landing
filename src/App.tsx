@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from "react";
 import { useScrollReveal, useCountUp } from "./hooks/useScrollReveal";
 
+const DEFAULT_FORM_ENDPOINT = "https://formspree.io/f/xlgoeoyj";
+
 /* ─── ICON COMPONENTS ─────────────────────────────────── */
 
 function GlobeIcon({ className = "w-5 h-5" }: { className?: string }) {
@@ -63,7 +65,7 @@ async function submitToBackend(email: string): Promise<boolean> {
   localStorage.setItem("apx_waitlist", JSON.stringify(existing));
 
   // Try to POST to configured endpoint
-  const endpoint = import.meta.env.VITE_FORM_ENDPOINT;
+  const endpoint = import.meta.env.VITE_FORM_ENDPOINT || DEFAULT_FORM_ENDPOINT;
   if (endpoint) {
     try {
       const res = await fetch(endpoint, {
